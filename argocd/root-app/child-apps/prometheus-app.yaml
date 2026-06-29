@@ -8,7 +8,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: "https://github.com/my-org/infrastructure-repo.git"
+    repoURL: "https://github.com/devopsbyraham/infrastructure-repo.git"
     path: infrastructure/prometheus
     targetRevision: HEAD
   destination:
