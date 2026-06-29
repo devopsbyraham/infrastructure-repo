@@ -8,9 +8,18 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: "https://github.com/devopsbyraham/infrastructure-repo.git"
-    path: argocd/infrastructure/prometheus
-    targetRevision: HEAD
+    repoURL: "https://prometheus-community.github.io/helm-charts"
+    chart: kube-prometheus-stack
+    targetRevision: 58.3.3
+    helm:
+      values: |
+        grafana:
+          enabled: true
+          service:
+            type: ClusterIP
+        prometheus:
+          prometheusSpec:
+            retention: 15d
   destination:
     server: "https://kubernetes.default.svc"
     namespace: monitoring
